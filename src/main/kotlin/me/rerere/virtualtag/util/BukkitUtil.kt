@@ -1,6 +1,5 @@
 package me.rerere.virtualtag.util
 
-import me.rerere.virtualtag.virtualTag
 import net.md_5.bungee.api.ChatColor
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
@@ -10,7 +9,6 @@ import java.util.regex.Pattern
 fun String.coloring(colorCode: Char = '&'): String =
     ChatColor.translateAlternateColorCodes(colorCode, with(HexColorUtil) { this@coloring.toHex() })
 
-fun List<String>.coloring(colorCode: Char = '&'): List<String> = this.map { it.coloring(colorCode) }
 
 object HexColorUtil {
     private val PATTERN = Pattern.compile("&(#[A-Fa-f0-9]{6})")
@@ -26,17 +24,6 @@ object HexColorUtil {
         return text
     }
 }
-
-fun timerTask(delay: Long = 0, interval: Long = 1, task: () -> Unit) = Bukkit.getScheduler().runTaskTimer(
-    virtualTag(), Runnable(task), delay, interval
-)
-
-fun asyncTimerTask(delay: Long = 0, interval: Long = 1, task: () -> Unit) =
-    Bukkit.getScheduler().runTaskTimerAsynchronously(
-        virtualTag(), Runnable(task), delay, interval
-    )
-
-fun asyncTask(task: () -> Unit) = Bukkit.getScheduler().runTaskAsynchronously(virtualTag(), Runnable(task))
 
 inline fun allPlayers(handler: (Player) -> Unit) {
     Bukkit.getOnlinePlayers().forEach {
