@@ -2,6 +2,8 @@ name: VirtualTag
 version: @VERSION@
 main: me.rerere.virtualtag.VirtualTag
 author: RE
+api-version: 1.13
+folia-supported: true
 depend:
   - packetevents
 softdepend:

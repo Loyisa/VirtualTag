@@ -23,7 +23,7 @@ dependencies {
     //compileOnly(group = "org.spigotmc", name = "spigot", version = "1.19.3-R0.1-SNAPSHOT")
     compileOnly(group = "org.spigotmc", name = "spigot-api", version = "1.21.4-R0.1-SNAPSHOT")
     compileOnly(group = "me.clip", name = "placeholderapi", version = "2.11.6")
-    compileOnly(group = "com.github.retrooper", name = "packetevents-spigot", version = "2.7.0")
+    compileOnly(group = "com.github.retrooper", name = "packetevents-spigot", version = "2.11.0")
 }
 
 tasks {
