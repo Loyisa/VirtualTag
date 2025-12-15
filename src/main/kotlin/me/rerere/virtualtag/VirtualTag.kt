@@ -45,7 +45,12 @@ class VirtualTag : JavaPlugin() {
     fun reload() {
         logger.info("Reloading VirtualTag...")
         configModule = ConfigModule()
-        tagManager.task().cancel()
+        tagManager.task.apply {
+            try {
+                cancel()
+            } catch (_: Exception) {
+            }
+        }
         tagManager = VirtualTagManager()
     }
 
