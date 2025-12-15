@@ -27,7 +27,7 @@ class VirtualTagManager {
         ) {
             updateAll()
         }
-    }.invoke()
+    }
 
     private fun updateAll() {
         allPlayers {
