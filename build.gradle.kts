@@ -23,10 +23,7 @@ dependencies {
     //compileOnly(group = "org.spigotmc", name = "spigot", version = "1.19.3-R0.1-SNAPSHOT")
     compileOnly(group = "org.spigotmc", name = "spigot-api", version = "1.21.4-R0.1-SNAPSHOT")
     compileOnly(group = "me.clip", name = "placeholderapi", version = "2.11.6")
-    compileOnly(group = "com.github.retrooper", name = "packetevents-spigot", version = "2.7.0")
-
-    // Okhttp
-    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    compileOnly(group = "com.github.retrooper", name = "packetevents-spigot", version = "2.11.0")
 }
 
 tasks {
@@ -46,8 +43,6 @@ tasks {
         relocate("kotlin", "me.rerere.virtualtag.thirdparty.kotlin")
         relocate("org.jetbrains", "me.rerere.virtualtag.thirdparty.org.jetbrains")
         relocate("org.intellij", "me.rerere.virtualtag.thirdparty.org.intellij")
-        relocate("okhttp","me.rerere.virtualtag.thirdparty.okhttp")
-        relocate("okio","me.rerere.virtualtag.thirdparty.okio")
     }
 
     artifacts {

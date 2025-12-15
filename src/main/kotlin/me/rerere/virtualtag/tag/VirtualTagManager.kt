@@ -3,9 +3,8 @@ package me.rerere.virtualtag.tag
 import me.rerere.virtualtag.api.Tag
 import me.rerere.virtualtag.api.colorful
 import me.rerere.virtualtag.hook.applyPlaceholderAPI
+import me.rerere.virtualtag.util.TaskUtil
 import me.rerere.virtualtag.util.allPlayers
-import me.rerere.virtualtag.util.asyncTimerTask
-import me.rerere.virtualtag.util.timerTask
 import me.rerere.virtualtag.virtualTag
 import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.entity.Player
@@ -17,13 +16,13 @@ class VirtualTagManager {
     private val previousTagCache = hashMapOf<UUID, Tag>()
 
     val task = if (virtualTag().configModule.mainConfig.asyncUpdate) {
-        asyncTimerTask(
+        TaskUtil.asyncTimerTask(
             interval = virtualTag().configModule.mainConfig.updateInterval.toLong()
         ) {
             updateAll()
         }
     } else {
-        timerTask(
+        TaskUtil.timerTask(
             interval = virtualTag().configModule.mainConfig.updateInterval.toLong()
         ) {
             updateAll()
